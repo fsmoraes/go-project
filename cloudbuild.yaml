@@ -15,6 +15,14 @@ steps:
       - "run"
       - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
 
+  - name: "golang"
+    id: "Test"
+    args: ['test', '-v']
+    env: ['GOPATH=.']
+    # args: 
+    #   - "test"
+    #   - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
+
   # - name: "docker"
   #   id: "Test"
   #   args: ["exec", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "go", "test", "-v"]
