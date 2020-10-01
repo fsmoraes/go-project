@@ -1,4 +1,19 @@
 steps:
+ 
+  - name: 'golang'
+    args: 
+      - 'install' 
+      - '.'
+    env: 
+      - 'PROJECT_ROOT=hello'
+
+  - name: 'golang'
+    args: 
+      - 'test'
+      - 'hello'
+    env: 
+      - 'PROJECT_ROOT=hello'
+
   - name: 'docker'
     id: 'Build'
     args:
@@ -15,10 +30,6 @@ steps:
       - "run"
       - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
 
-  - name: "golang"
-    id: "Test"
-    args: ['test', '-v']
-    env: ['GOPATH=.']
     # args: 
     #   - "test"
     #   - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
