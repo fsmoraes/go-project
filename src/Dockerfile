@@ -1,6 +1,6 @@
 FROM golang:alpine AS builder
 
-COPY main.go .
+COPY . .
 
 RUN go build -o /go/bin/hello
 

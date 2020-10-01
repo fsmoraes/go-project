@@ -1,0 +1,19 @@
+steps:
+  - name: 'docker'
+    id: 'Build'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+      - '.'
+
+  - name: "docker"
+    id: "Test"
+    args: ["exec", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "go", "test", "-v"]
+
+  - name: 'docker'
+    id: 'Push'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+      
