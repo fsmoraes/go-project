@@ -3,7 +3,7 @@ steps:
   - name: 'golang'
     args: 
       - 'install' 
-      - '.'
+      - './src/'
     env: 
       - 'PROJECT_ROOT=hello'
 
