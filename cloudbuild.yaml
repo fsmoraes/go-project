@@ -3,9 +3,10 @@ steps:
   - name: 'golang'
     args: 
       - 'install' 
-      - './src/'
+      - '.'
     env: 
       - 'PROJECT_ROOT=hello'
+      - 'GOPATH=./src/'
 
   - name: 'golang'
     args: 
@@ -13,6 +14,7 @@ steps:
       - 'hello'
     env: 
       - 'PROJECT_ROOT=hello'
+      - 'GOPATH=./src/'
 
   - name: 'docker'
     id: 'Build'
