@@ -10,11 +10,17 @@ steps:
       - '.'
 
   - name: "docker"
-    id: "Test"
-    args: ["exec", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "go", "test", "-v"]
+    id: "Run"
+    args: 
+      - "run"
+      - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
 
-  - name: 'docker'
-    id: 'Push'
-    args:
-      - 'push'
-      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+  # - name: "docker"
+  #   id: "Test"
+  #   args: ["exec", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "go", "test", "-v"]
+
+  # - name: 'docker'
+  #   id: 'Push'
+  #   args:
+  #     - 'push'
+  #     - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
