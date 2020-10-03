@@ -1,24 +1,20 @@
 steps:
  
   - name: 'gcr.io/cloud-builders/go'
-    args: ['install', '.']
-    env: ['PROJECT_ROOT=hello']
+    args: 
+      - 'install' 
+      - '.'
+    env: 
+      - 'PROJECT_ROOT=hello'
     dir: 'src'
 
-  # - name: 'golang'
-  #   args: 
-  #     - 'install'
-  #   env: 
-  #     - 'PROJECT_ROOT=hello'
-#      - 'GOPATH=/src'
-
-#  - name: 'golang'
-#    args:
-#      - 'test'
-#      - 'hello'
-#    env:
-#      - 'PROJECT_ROOT=hello'
-#      - 'GOPATH=./src/'
+  - name: 'gcr.io/cloud-builders/go'
+    args:
+      - 'test'
+      - 'hello'
+    env:
+      - 'PROJECT_ROOT=hello'
+    dir: 'src'
 #
 #  - name: 'docker'
 #    id: 'Build'
