@@ -29,7 +29,7 @@ steps:
       - '.'
 
   - name: 'docker'
-    id: 'Push'
+    id: 'Pushaaa'
     args:
       - 'push'
       - 'gcr.io/$PROJECT_ID/$REPO_NAME'
