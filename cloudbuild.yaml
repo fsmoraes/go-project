@@ -5,8 +5,8 @@ steps:
     args: 
       - 'run' 
       - '.'
-    # env: 
-    #   - 'PROJECT_ROOT=app'
+    env: 
+      - 'PROJECT_ROOT=app'
     dir: 'src'
 
   - name: 'gcr.io/cloud-builders/go'
@@ -14,8 +14,8 @@ steps:
     args:
       - 'test'
       - '-v'
-    # env:
-    #   - 'PROJECT_ROOT=app'
+    env:
+      - 'PROJECT_ROOT=app'
     dir: 'src'
 #
 #  - name: 'docker'
