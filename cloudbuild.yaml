@@ -23,13 +23,13 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/$REPO_NAME'
+      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
       - '-f'
       - './src/Dockerfile'
       - '.'
 
   - name: 'docker'
-    id: 'Pushaaa'
+    id: 'Push'
     args:
       - 'push'
-      - 'gcr.io/$PROJECT_ID/$REPO_NAME'
+      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
