@@ -18,15 +18,15 @@ steps:
       - 'PROJECT_ROOT=app'
     dir: 'src'
 
- - name: 'docker'
-   id: 'Build'
-   args:
-     - 'build'
-     - '-t'
-     - 'gcr.io/$PROJECT_ID/$REPO_NAME'
-     - '-f'
-     - './src/Dockerfile'
-     - '.'
+  - name: 'docker'
+    id: 'Build'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/$REPO_NAME'
+      - '-f'
+      - './src/Dockerfile'
+      - '.'
 
   - name: 'docker'
     id: 'Push'
