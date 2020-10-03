@@ -11,6 +11,7 @@ steps:
   - name: 'gcr.io/cloud-builders/go'
     args:
       - 'test'
+      - '-v'
       - 'hello'
     env:
       - 'PROJECT_ROOT=hello'
