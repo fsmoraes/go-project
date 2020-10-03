@@ -1,6 +1,6 @@
 steps:
  
-  - name: 'golang'
+  - name: 'gcr.io/cloud-builders/go'
     args: ['install', '.']
     env: ['PROJECT_ROOT=hello']
     dir: 'src'
