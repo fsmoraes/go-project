@@ -1,20 +1,22 @@
 steps:
  
   - name: 'gcr.io/cloud-builders/go'
+    id: 'Rodando app'
     args: 
       - 'run' 
       - '.'
-    env: 
-      - 'PROJECT_ROOT=app'
-    dir: 'src'
+    # env: 
+    #   - 'PROJECT_ROOT=app'
+    # dir: 'src'
 
   - name: 'gcr.io/cloud-builders/go'
+    id: 'Testes'
     args:
       - 'test'
       - '-v'
-    env:
-      - 'PROJECT_ROOT=app'
-    dir: 'src'
+    # env:
+    #   - 'PROJECT_ROOT=app'
+    # dir: 'src'
 #
 #  - name: 'docker'
 #    id: 'Build'
