@@ -2,46 +2,31 @@ steps:
  
   - name: 'golang'
     args: 
-      - 'install' 
-      - '.'
+      - 'install'
     env: 
       - 'PROJECT_ROOT=hello'
-      - 'GOPATH=./src/'
+#      - 'GOPATH=/src'
 
-  - name: 'golang'
-    args: 
-      - 'test'
-      - 'hello'
-    env: 
-      - 'PROJECT_ROOT=hello'
-      - 'GOPATH=./src/'
-
-  - name: 'docker'
-    id: 'Build'
-    args:
-      - 'build'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
-      - '-f'
-      - './src/Dockerfile'
-      - '.'
-
-  - name: "docker"
-    id: "Run"
-    args: 
-      - "run"
-      - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
-
-    # args: 
-    #   - "test"
-    #   - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
-
-  # - name: "docker"
-  #   id: "Test"
-  #   args: ["exec", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "go", "test", "-v"]
-
-  # - name: 'docker'
-  #   id: 'Push'
-  #   args:
-  #     - 'push'
-  #     - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+#  - name: 'golang'
+#    args:
+#      - 'test'
+#      - 'hello'
+#    env:
+#      - 'PROJECT_ROOT=hello'
+#      - 'GOPATH=./src/'
+#
+#  - name: 'docker'
+#    id: 'Build'
+#    args:
+#      - 'build'
+#      - '-t'
+#      - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+#      - '-f'
+#      - './src/Dockerfile'
+#      - '.'
+#
+#  - name: "docker"
+#    id: "Run"
+#    args:
+#      - "run"
+#      - "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"
