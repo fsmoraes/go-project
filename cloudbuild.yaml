@@ -1,10 +1,15 @@
 steps:
  
   - name: 'golang'
-    args: 
-      - 'install'
-    env: 
-      - 'PROJECT_ROOT=hello'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=hello']
+    dir: 'src'
+
+  # - name: 'golang'
+  #   args: 
+  #     - 'install'
+  #   env: 
+  #     - 'PROJECT_ROOT=hello'
 #      - 'GOPATH=/src'
 
 #  - name: 'golang'
