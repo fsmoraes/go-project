@@ -2,19 +2,18 @@ steps:
  
   - name: 'gcr.io/cloud-builders/go'
     args: 
-      - 'install' 
+      - 'run' 
       - '.'
     env: 
-      - 'PROJECT_ROOT=hello'
+      - 'PROJECT_ROOT=app'
     dir: 'src'
 
   - name: 'gcr.io/cloud-builders/go'
     args:
       - 'test'
       - '-v'
-      - 'hello'
     env:
-      - 'PROJECT_ROOT=hello'
+      - 'PROJECT_ROOT=app'
     dir: 'src'
 #
 #  - name: 'docker'
